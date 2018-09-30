@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ControlTemplateExtractor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" WindowState="Maximized"  Height="Auto" Width="800" ContentRendered="MainWindow_Loaded">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <Style x:Key="extractor.margin" TargetType="FrameworkElement">
+                <Setter Property="Margin" Value="3"/>
+            </Style>
+        </Grid.Resources>
+        <TextBlock x:Name="Heading" Style="{StaticResource ResourceKey=extractor.margin}" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Foreground="Black" Text="{Binding ScreenHeader}"/>
+        <ComboBox x:Name="TypeList" Grid.Row="1" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=extractor.margin}" SelectionChanged="SelectionChanged" Margin="10"  DisplayMemberPath="Name" Width="300" />
+        <TextBox IsReadOnly="True" Margin="10" x:Name="DisplayBox"  Grid.Row="2" Style="{StaticResource ResourceKey=extractor.margin}" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
+        <Button Grid.Row="3" Margin="10" Height="30" Style="{StaticResource ResourceKey=extractor.margin}" Content="Done" Click="Exit" />
     </Grid>
 </Window>
