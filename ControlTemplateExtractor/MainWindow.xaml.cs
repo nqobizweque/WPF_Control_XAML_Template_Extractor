@@ -37,7 +37,7 @@ namespace ControlTemplateExtractor
         private async void MainWindow_Loaded(object sender, EventArgs e)
         {
             Heading.Text = "WPF Control Template Extractor";
-            TypeList.ItemsSource = Controls = await Task.Run(() => ControlCollections.GetConfigControls().Where(t => HasResources(t)).ToList());
+            TypeList.ItemsSource = Controls = await Task.Run(() => ControlCollections.GetConfigControls().Where(t => HasResources(t)).OrderBy(con => con.Name).ToList());
         }
 
         private void Exit(object sender, RoutedEventArgs e)
