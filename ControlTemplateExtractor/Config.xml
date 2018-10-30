@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ControlAssemblies>
+  <ControlAssembly>
+    <Assembly>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Windows.Controls.Ribbon.dll</Assembly>
+    <Namespace>System.Windows.Controls.Ribbon</Namespace>
+  </ControlAssembly>
+  <ControlAssembly>
+    <Assembly>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\PresentationFramework.dll</Assembly>
+    <Namespace>System.Windows.Controls</Namespace>
+  </ControlAssembly>
+  <ControlAssembly>
+    <Assembly>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\PresentationFramework.dll</Assembly>
+    <Namespace>System.Windows.Controls</Namespace>
+  </ControlAssembly>
+</ControlAssemblies>

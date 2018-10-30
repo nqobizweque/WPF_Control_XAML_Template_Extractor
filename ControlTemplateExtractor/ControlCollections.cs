@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
@@ -18,7 +19,10 @@ namespace ControlTemplateExtractor
             List<Type> types = new List<Type>();
 
             XmlDocument config = new XmlDocument();
-            config.Load("Config.xml");
+            var debug = AppDomain.CurrentDomain.BaseDirectory;
+            var root = Directory.GetParent(Directory.GetParent(Directory.GetParent(debug).FullName).FullName).FullName;
+            var path = Path.Combine(root, @"Config.xml");
+            config.Load(path);
             foreach (XmlNode node in config.DocumentElement.ChildNodes)
             {
                 var _assembly = node.FirstChild.InnerText;
